@@ -1,12 +1,21 @@
+import './../styles/App.css'
+import { Link, Route, Routes } from 'react-router-dom'
+import Women from './components/Women'
+import Home from './components/home'
 
-import React from "react";
-import './../styles/App.css';
+function App() {
 
-const App = () => {
   return (
+    <>
     <div>
-        {/* Do not remove the main div */}
+      <Link to={'/home'}>Home</Link><br />
+      <Link to={'/women'}>Women</Link>
     </div>
+      <Routes>
+        <Route path='/home' element={<Home />}/>
+        <Route path='/women/*' element={<Women />}/>
+      </Routes>
+    </>
   )
 }
 
